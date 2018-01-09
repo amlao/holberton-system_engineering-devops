@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -la ~/github.com/amlao/holberton-system_engineering-devops/0x00-shell_basic
+ls -la . .. /boot
