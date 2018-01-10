@@ -1,7 +1,3 @@
-#!/bin/bash
-touch holberton_man_page
-.\" Manpage for holberton_man_page.
-.\" Contact
 .TH man(2) "0.31" "04 May 2015" "man(2)"
 .SH NAME
 holberton - become a full-stack software engineer
@@ -17,5 +13,3 @@ holberton does not take any options. However, you can supply studentname.
 No known bugs.
 .SH Author
 Julien Barbier, Sylvain Kalache, Sophie Barbier, Guillaume Salva, Kris Bredemeier, Julien Cyr, Alex Guatier and all the Holberton mentors
-
-0.31 04 May 2015 man(2)
