@@ -1,2 +1,2 @@
 #!/bin/bash
-find ./ -type f -empty | printf f1,6
+find ./ -type f -empty printf "f\n"
