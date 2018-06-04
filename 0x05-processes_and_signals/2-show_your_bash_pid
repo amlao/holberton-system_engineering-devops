@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Displays line contaning the bash word
+# shellcheck disable=SC2009
+ps -auxf | grep "bash"
