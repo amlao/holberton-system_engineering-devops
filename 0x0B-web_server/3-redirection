@@ -1,8 +1,9 @@
 #!/usr/bin/env bash
 # Configure your Nginx server so that /redirect_me redirects to another page
-sudo apt-get install -y nginx
-fork="/redirect_me"
-mewtwo="/etc/nginx/sites-available/default"
-ditto="https://www.youtube.com/watch?v=QH2-TGUlwu4"
-sudo sed -i "location $fork $ditto;" "$mewtwo"
-sudo service nginx reload
+sudo apt-get -y install nginx
+echo "Holberton School for the win!" | tee /usr/share/nginx/html/index.html > /dev/null
+sudo service nginx restart
+
+sudo sed -i "s|location / {|location /redirect_me {|g"  /etc/nginx/sites-available/default
+sudo sed -i "s|try_files \$uri \$uri/ =404;|return 301 https://www.youtube.com/watch?v=5Rswx2Z7SDw" /etc/nginx/sites-available/default
+sudo service nginx restart
