@@ -9,8 +9,8 @@ sed -i "s|location / {|location /redirect_me {|g"  /etc/nginx/sites-available/de
 sed -i "s|try_files \$uri \$uri/ =404;|return 301 https://www.youtube.com/watch?v=5Rswx2Z7SDw" /etc/nginx/sites-available/default
 sudo service nginx restart
 
-NEW_STRING="\\\terror_page 404 /custom_404.html;\n\tlocation = /custom_404.html {\n\t\troot /usr/share/nginx/html;\n\t\tinternal;\n\t}\n"
+PAGE="\\\terror_page 404 /custom_404.html;\n\tlocation = /custom_404.html {\n\t\troot /usr/share/nginx/html;\n\t\tinternal;\n\t}\n"
 
 echo "Ceci n'est pas une page" | sudo tee /usr/share/nginx/html/custom_404.html > /dev/null
-sudo sed -i "37i $NEW_STRING" /etc/nginx/sites-available/default
+sudo sed -i "23i $PAGE" /etc/nginx/sites-available/default
 sudo service nginx restart
