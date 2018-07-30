@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Nginx must be running, and listening on port 80
+sed -i 's/8080/80' /etc/nginx/default
+sudo service nginx restart
