@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# task 1 in 7 lines or less
+sudo pkill apache2
+sudo chown nginx:nginx /etc/nginx/nginx.conf
+sudo chmod 700 /etc/nginx/nginx.conf
+sudo sed -i 's/80/8080/' /etc/nginx/sites_available/default
+sudo -u nginx service nginx startvagrant@vagrant-ubuntu-trusty-64:~/holberton-syste
