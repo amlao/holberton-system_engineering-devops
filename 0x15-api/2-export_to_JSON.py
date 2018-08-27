@@ -16,6 +16,6 @@ if __name__ == '__main__':
     for done in todo:
         comp_list.append({"task": done.get("title"),
                           "completed": done.get("completed"),
-                            "username": username})
+                          "username": username})
         with open(sys.argv[1] + ".json", 'a') as file:
             file.write(json.dumps({"2": comp_list}))
