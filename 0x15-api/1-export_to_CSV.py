@@ -16,6 +16,6 @@ if __name__ == '__main__':
         with open(sys.argv[1] + ".csv", 'a') as file:
             output = csv.writer(file, quoting=csv.QUOTE_ALL)
             for tasks in todo:
-                output.writerow([sys.argv[1], name.get('name'),
-                                 tasks.get('completed'),
+                output.writerow([name.get('id'), name.get('name'),
+                                 str(tasks.get('completed')),
                                  tasks.get('title')])
