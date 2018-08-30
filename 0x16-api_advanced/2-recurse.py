@@ -15,14 +15,13 @@ def recurse(subreddit, hot_list=[], after=None):
     try:
         url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
         uname = {'User-Agent': 'Trollolol'}
-        req = requests.get(url, headers=uname, params={'limit': 10})
+        req = requests.get(url, headers=uname, params={'after': after})
         top = req.json().get('data').get('children')
+        afters = req.json()['data'].get('after')
         for i in top:
             hot_list.append(i['data'].get('title'))
-        afters = json['data']['after']
         if afters is not None:
-            return(recurse(subreddit, hot_list, afters))
-        else:
-            return hot_list
+            recurse(subreddit, hot_list, afters)
+        return hot_list
     except:
         return None
